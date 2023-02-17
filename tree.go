@@ -42,3 +42,13 @@ func (b *BinaryTree) InsertLeft(e *BinaryTreeNode, data any) *BinaryTreeNode {
 func (b *BinaryTree) InsertRight(e *BinaryTreeNode, data any) *BinaryTreeNode {
 	return e.InsertRight(data)
 }
+func createTest() *BinaryTree {
+	tree := NewBinaryTree(1)
+	tree.InsertLeft(tree.Root, 2)
+	tree.InsertRight(tree.Root, 3)
+	tree.Root.LeftChild.InsertLeft(4)
+	tree.Root.LeftChild.InsertRight(5)
+	tree.Root.RightChild.InsertLeft(6)
+	tree.Root.RightChild.InsertRight(7)
+	return tree
+}
