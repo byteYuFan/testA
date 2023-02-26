@@ -28,37 +28,10 @@ func TestRand01Fun(t *testing.T) {
 PASS
 */
 func TestRand1To7(t *testing.T) {
-	var (
-		a0 int
-		a1 int
-		a2 int
-		a3 int
-		a4 int
-		a5 int
-		a6 int
-		a7 int
-	)
-	for i := 0; i < 8888888; i++ {
+	var arr [8]int
+	for i := 0; i < 888888888; i++ {
 		x := Rand1To7()
-		switch x {
-		case 0:
-			a0++
-		case 1:
-			a1++
-		case 2:
-			a2++
-		case 3:
-			a3++
-		case 4:
-			a4++
-		case 5:
-			a5++
-		case 6:
-			a6++
-		case 7:
-			a7++
-		}
-
+		arr[x]++
 	}
-	fmt.Printf("%d %d %d %d %d %d %d,%d", a0, a1, a2, a3, a4, a5, a6, a7)
+	fmt.Printf("%d %d %d %d %d %d %d,%d", arr[0], arr[1], arr[2], arr[3], arr[4], arr[5], arr[6], arr[7])
 }
