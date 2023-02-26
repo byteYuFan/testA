@@ -30,7 +30,8 @@ func process(conn net.Conn) {
 	}
 }
 func main() {
-	lis, err := net.Listen("tcp", ":8080")
+	listener, err := net.Listen("tcp", ":8080")
+	//  Listener是一个用于面向流的网络协议的公用的网络监听器接口。多个线程可能会同时调用一个Listener的方法。
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -40,9 +41,9 @@ func main() {
 		if err != nil {
 
 		}
-	}(lis)
+	}(listener)
 	for {
-		conn, err := lis.Accept()
+		conn, err := listener.Accept()
 		if err != nil {
 			fmt.Println(err)
 			break
